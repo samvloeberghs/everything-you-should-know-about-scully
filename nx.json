@@ -1,0 +1,22 @@
+{
+  "npmScope": "everything-you-should-know-about-scully",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "scully": {
+      "tags": []
+    },
+    "scully-e2e": {
+      "tags": [],
+      "implicitDependencies": ["scully"]
+    }
+  }
+}

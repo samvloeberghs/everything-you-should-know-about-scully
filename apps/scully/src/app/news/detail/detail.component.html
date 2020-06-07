@@ -1,0 +1,16 @@
+<h2>News detail #{{newsId$ | async}}</h2>
+
+<h3>Intro</h3>
+<img src="https://via.placeholder.com/150" alt=""/>
+<p>{{(newsDetail$ | async)?.short}}</p>
+
+<h3>Author</h3>
+<div style="font-style:italic">
+  <h4>{{(userDetail$ | async)?.name}}</h4>
+  <h4>Bio</h4>
+  <div [innerHTML]="(userDetail$ | async)?.bio"></div>
+</div>
+
+<h3>Full article</h3>
+<img src="https://via.placeholder.com/250" alt=""/>
+<div [innerHTML]="(newsDetail$ | async)?.full"></div>
