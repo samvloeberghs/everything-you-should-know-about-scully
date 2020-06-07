@@ -18,7 +18,7 @@ export class OverviewComponent implements OnInit {
 
   public readonly users$ = isScullyGenerated()
     ? this.transferStateService.getState<Users>(usersStateKey)
-    : this.httpClient.get<Users>('/assets/users-10.json').pipe(
+    : this.httpClient.get<Users>('/assets/users.json').pipe(
       tap(users => this.transferStateService.setState<Users>(usersStateKey, users))
     );
 

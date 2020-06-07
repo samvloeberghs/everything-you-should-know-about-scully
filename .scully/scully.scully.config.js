@@ -22,11 +22,11 @@ exports.config = {
   routes: {
     '/news/:id': {
       type: News,
-      url: 'http://localhost:4200/assets/news-100.json'
+      url: 'http://localhost:4200/assets/news.json'
     },
     '/users/:id/:slug': {
       type: Users,
-      url: 'http://localhost:4200/assets/users-10.json'
+      url: 'http://localhost:4200/assets/users.json'
     }
   }
 };

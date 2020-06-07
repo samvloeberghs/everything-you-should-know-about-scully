@@ -46,7 +46,7 @@ export class DetailComponent implements OnInit {
 
   public readonly userArticles$ = isScullyGenerated()
     ? this.transferStateService.getState<UserArticles>(userArticlesStateKey)
-    : this.httpClient.get<Array<number>>('/assets/news-100.json').pipe(
+    : this.httpClient.get<Array<number>>('/assets/news.json').pipe(
       withLatestFrom(this.userId$),
       map(([articles, userId]) => articles.filter(article => article % 10 === +userId)),
       tap(userArticles => this.transferStateService.setState<UserArticles>(userArticlesStateKey, userArticles))
