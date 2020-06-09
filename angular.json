@@ -10,7 +10,7 @@
       },
       "root": "apps/scully",
       "sourceRoot": "apps/scully/src",
-      "prefix": "su",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -44,6 +44,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "statsJson": true,
               "budgets": [
                 {
                   "type": "initial",

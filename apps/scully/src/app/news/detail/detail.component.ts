@@ -20,7 +20,7 @@ const newsDetailStateKey = 'newsDetail';
 const authorNewsDetailStateKey = 'authorNewsDetail';
 
 @Component({
-  selector: 'su-news-detail',
+  selector: 'app-news-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })

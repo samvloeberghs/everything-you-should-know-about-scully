@@ -31,8 +31,9 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
-    "scully": "scully --scanRoutes --configFile .scully/scully.scully.config.js",
-    "scully:serve": "scully serve --configFile .scully/scully.scully.config.js",
+    "prescully": "rm -rf dist/apps/scully-static",
+    "scully": "scully --scanRoutes",
+    "scully:serve": "scully serve",
     "serve:dist:scully:static": "npx ws --port 4203 -d dist/apps/scully-static"
   },
   "husky": {
@@ -65,7 +66,8 @@
     "normalize.css": "^8.0.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.0",
-    "scully-plugin-minify-html": "^2.5.0",
+    "scully-plugin-disable-angular": "^4.0.2",
+    "scully-plugin-minify-html": "^3.1.2",
     "uuid": "^8.0.0",
     "zone.js": "^0.10.2"
   },
@@ -97,7 +99,6 @@
     "lint-staged": "^10.1.2",
     "local-web-server": "^4.0.0",
     "prettier": "^2.0.5",
-    "scully-plugin-disable-angular": "^4.0.1",
     "ts-jest": "^25.2.1",
     "ts-node": "^7.0.0",
     "tslint": "^6.0.0",

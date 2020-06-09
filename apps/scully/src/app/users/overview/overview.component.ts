@@ -10,7 +10,7 @@ type Users = Array<{
 const usersStateKey = 'users';
 
 @Component({
-  selector: 'su-users-overview',
+  selector: 'app-users-overview',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss']
 })

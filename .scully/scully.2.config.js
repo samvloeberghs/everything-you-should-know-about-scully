@@ -1,19 +1,19 @@
-const { MinifyHtml } = require('scully-plugin-minify-html');
-
+// scully.router-plugins.config.js
 const { News } = require('./plugins/scully-news');
-
-const postRenderers = [MinifyHtml];
+const { Users } = require('./plugins/scully-users');
 
 exports.config = {
-  inlineStateOnly: true,
-  projectRoot: './apps/scully/src',
   projectName: 'scully',
   outDir: './dist/apps/scully-static',
-  defaultPostRenderers: postRenderers,
+  projectRoot: './apps/scully',
   routes: {
     '/news/:id': {
       type: News,
       url: 'http://localhost:4200/assets/news.json'
+    },
+    '/users/:id/:slug': {
+      type: Users,
+      url: 'http://localhost:4200/assets/users.json'
     }
   }
 };

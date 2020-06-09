@@ -7,7 +7,7 @@ type Articles = Array<number>;
 const articlesStateKey = 'articles';
 
 @Component({
-  selector: 'su-news-overview',
+  selector: 'app-news-overview',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss']
 })

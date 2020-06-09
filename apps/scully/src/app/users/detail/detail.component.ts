@@ -7,11 +7,15 @@ import { Observable } from 'rxjs';
 import { isScullyGenerated, TransferStateService } from '@scullyio/ng-lib';
 
 export interface UserDetail {
+  id: number;
+  slug: string;
   name: string;
   bio: string
 }
 
 export interface UserDetailSafe {
+  id: number;
+  slug: string;
   name: string;
   bio: SafeHtml
 }
@@ -22,7 +26,7 @@ type UserArticles = Array<number>;
 const userArticlesStateKey = 'userArticles';
 
 @Component({
-  selector: 'su-users-detail',
+  selector: 'app-users-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })

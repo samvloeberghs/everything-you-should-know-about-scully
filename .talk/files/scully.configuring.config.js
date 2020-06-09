@@ -1,7 +1,9 @@
 // scully.<your-project-name>.config.js
-const { setPluginConfig } = require('@scullyio/scully');
+const {
+  setPluginConfig, RouteTypes
+} = require('@scullyio/scully');
 const { News } = require('./news.routerplugin');
-const { MinifyHtml } = require('./minifyHtml.renderplugin');
+const { MinifyHtml } = require('./minifyHtml.renderPlugin');
 
 setPluginConfig(News, {
   src: 'http://your.api/news'
@@ -11,7 +13,7 @@ const postRenderers = [MinifyHtml];
 
 exports.config = {
   projectRoot: './src',
-  outDir: './dist/static',
+  outDir: './dist/apps/scully-static',
   inlineStateOnly: true,
   defaultPostRenderers: postRenderers,
   routes: {
@@ -27,21 +29,3 @@ exports.config = {
     }
   }
 };
-
-// scully.<your-project-name>.config.js
-const { RouteTypes } = require('@scullyio/scully');
-
-exports.config = {
-  projectRoot: './src',
-  routes: {
-    '/users/:id': {
-      type: RouteTypes.json,
-      id: {
-        url: 'http://your.api/users',
-        property: 'id'
-      }
-    }
-  }
-}
-
-

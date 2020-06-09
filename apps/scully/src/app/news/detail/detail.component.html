@@ -5,10 +5,12 @@
 <p>{{(newsDetail$ | async)?.short}}</p>
 
 <h3>Author</h3>
-<div class="author">
-  <h4>{{(userDetail$ | async)?.name}}</h4>
+<div class="author" *ngIf="(userDetail$ | async) as userDetail">
+  <h4>
+    <a [routerLink]="['/users', userDetail.id, userDetail.slug]">{{userDetail.name}}</a>
+  </h4>
   <h4>Bio</h4>
-  <div [innerHTML]="(userDetail$ | async)?.bio"></div>
+  <div [innerHTML]="userDetail.bio"></div>
 </div>
 
 <h3>Full article</h3>

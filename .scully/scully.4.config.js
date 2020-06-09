@@ -1,24 +1,18 @@
+// scully.router-render-plugins.config.js
 const { setPluginConfig } = require('@scullyio/scully');
-const { MinifyHtml } = require('scully-plugin-minify-html');
-const { DisableAngular } = require('scully-plugin-disable-angular');
-
 const { News } = require('./plugins/scully-news');
 const { Users } = require('./plugins/scully-users');
+const { DemoBanner } = require('./plugins/scully-demobanner');
 
-setPluginConfig(DisableAngular, {
-  // removeState: true
-});
-
-setPluginConfig(MinifyHtml, {});
-
-const postRenderers = []; //[DisableAngular, MinifyHtml];
+setPluginConfig(DemoBanner, {
+  message: 'Hi ngLeipzig'
+})
 
 exports.config = {
-  // inlineStateOnly: true,
-  projectRoot: './apps/scully/src',
   projectName: 'scully',
   outDir: './dist/apps/scully-static',
-  defaultPostRenderers: postRenderers,
+  projectRoot: './apps/scully',
+  defaultPostRenderers: [DemoBanner],
   routes: {
     '/news/:id': {
       type: News,

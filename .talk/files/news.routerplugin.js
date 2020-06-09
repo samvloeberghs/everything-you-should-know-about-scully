@@ -1,10 +1,11 @@
+// news.routerplugin.js
 const {
   httpGetJson, registerPlugin, routeSplit
 } = require('@scullyio/scully');
 
-const Users = 'users';
+const News = 'news';
 
-const usersPlugin = async (route, config) => {
+const newsPlugin = async (route, config) => {
   const list = await httpGetJson(config.url);
   const { createPath } = routeSplit(route);
   const handledRoutes = [];
@@ -16,5 +17,5 @@ const usersPlugin = async (route, config) => {
   return handledRoutes;
 };
 
-registerPlugin('router', Users, usersPlugin);
-exports.Users = Users;
+registerPlugin('router', News, newsPlugin);
+exports.News = News;

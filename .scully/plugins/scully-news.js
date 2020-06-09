@@ -1,10 +1,12 @@
-const {httpGetJson, registerPlugin, routeSplit} = require('@scullyio/scully');
+const {
+  httpGetJson, registerPlugin, routeSplit
+} = require('@scullyio/scully');
 
 const News = 'news';
 
-const newsPlugin = async(route, config) => {
+const newsPlugin = async (route, config) => {
   const list = await httpGetJson(config.url);
-  const {createPath} = routeSplit(route);
+  const { createPath } = routeSplit(route);
   const handledRoutes = [];
   for (let item of list) {
     handledRoutes.push({
@@ -14,7 +16,5 @@ const newsPlugin = async(route, config) => {
   return handledRoutes;
 };
 
-const newsPluginValidator = async conf => [];
-
-registerPlugin('router', News, newsPlugin, newsPluginValidator);
+registerPlugin('router', News, newsPlugin);
 exports.News = News;
