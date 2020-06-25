@@ -8,8 +8,8 @@ const { Users } = require('./plugins/scully-users');
 const { DemoBanner } = require('./plugins/scully-demobanner');
 
 setPluginConfig(DemoBanner, {
-  message: 'Hi ngLeipzig'
-})
+  message: 'Hi DAGMeetup'
+});
 
 exports.config = {
   projectName: 'scully',
